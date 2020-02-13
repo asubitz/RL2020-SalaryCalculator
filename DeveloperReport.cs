@@ -2,14 +2,15 @@
 {
     public class DeveloperReport
     {
-        public int Id { get; set; }
+        public int Id { private get; set; }
 
-        public string Name { get; set; }
+        public string Name { private get; set; }
 
-        public string Level { get; set; }
+        public ISalaryCalculator DevSalaryCalculator { private get; set; }
 
-        public int WorkingHours { get; set; }
-
-        public double HourlyRate { get; set; }
+        public double CalculateSalary()
+        {
+            return DevSalaryCalculator.Calculate();
+        }
     }
 }
